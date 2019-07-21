@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# FORMAT:
+# services[<PORT>]="<COMMAND TO RESTART SERVICE>"
+
+declare -A services
+services[3000]="/home/user/restart-node.sh"
+services[32400]="sudo service plexmediaserver restart"
+
+# After how many seconds a service is considered to be down
+
+timeout=5
