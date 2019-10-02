@@ -9,6 +9,10 @@ check_port () {
     then
         echo "Failed: $port"
         eval "${services[$port]}"
+        if [ $? -ne 0 ]
+        then
+            echo "Warning: Possible error when issuing restart command '${services[$port]}'"
+        fi
     fi
 }
 
